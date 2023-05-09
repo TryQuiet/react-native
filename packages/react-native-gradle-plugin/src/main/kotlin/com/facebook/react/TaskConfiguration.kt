@@ -21,7 +21,7 @@ import org.gradle.api.Project
 @Suppress("SpreadOperator", "UnstableApiUsage")
 internal fun Project.configureReactTasks(variant: Variant, config: ReactExtension) {
   val targetName = variant.name.capitalizeCompat()
-  val targetPath = variant.name
+  val targetPath = "${variant.flavorName}/${variant.buildType}"
 
   // Resources: generated/assets/react/<variant>/index.android.bundle
   val resourcesDir = File(buildDir, "generated/res/react/$targetPath")
